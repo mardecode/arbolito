@@ -1,15 +1,27 @@
 #ifndef ARBOL_H
 #define ARBOL_H
 #include "Nodo.h"
+#include <vector>
+#include <string>
 
-class Arbol
+#include "mapeador.h"
+using namespace std;
+
+class Arbol: public Mapeador
 {
-public:
-    Arbol();
-    double variable;
+private:
+    vector<string> expresion;
+    void borrar_ultimo();
+    string ultimo();
+    Nodo * raiz;
 
+public:
+    Arbol(vector<string>);
+    Nodo * next(Nodo*);
+
+    void crearArbol();
+    double solve(double);
    // double resolver(double);
-    Nodo * raiz ();
 
 };
 

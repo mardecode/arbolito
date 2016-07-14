@@ -8,7 +8,7 @@ Parser::Parser(string t)
 vector<string> Parser::parsear() {
     vector <string> vec ;
     string temp = "";
-    for (string::iterator it = this->texto.begin(); it != this->texto.end(); ++it){
+ /*   for (string::iterator it = this->texto.begin(); it != this->texto.end(); ++it){
 
         if (*it != ' '){
             //cout << *it<<"/ \n ";
@@ -23,6 +23,18 @@ vector<string> Parser::parsear() {
 
         }
     }
-
+*/
+    unsigned int cont = 0;
+    for(auto it:this->texto){
+        cont++;
+        if(it != ' '){
+            temp+=it;
+            if(cont == this->texto.size()) vec.push_back(temp);
+        }
+        else{
+            vec.push_back(temp);
+            temp = "";
+        }
+    }
     return vec;
 }
