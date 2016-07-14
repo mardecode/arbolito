@@ -4,7 +4,7 @@
 #include "Nodo.h"
 #include "parser.h"
 #include "analizador.h"
-
+#include <vector>
 using namespace std;
 
 int main(){
@@ -33,14 +33,30 @@ int main(){
         cout <<"sep"  << endl;
     }
 */
+
+/*
     Parser * p = new Parser("5 + 12 * 11 + x + 1234");
     auto expresion = p->parsear();
 
     Analizador * a = new Analizador(expresion);
 
+*/
+/*
+    vector<vector<double>> datos;
+
+    for(int i=0;i<100;++i){
+        vector<double> temp;
+        temp.push_back(i);
+        temp.push_back(i*i);
+        temp.push_back(0);
+        datos.push_back(temp);
+    }
 
 
-    return 0;
+    for(auto v:datos){
+        cout << v[0] <<" " << v[1] << " "<< v[2] << endl;
+    }
 
+*/
 }
 
