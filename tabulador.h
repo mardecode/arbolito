@@ -20,6 +20,9 @@ public:
     Tabulador(string);
     vector<vector<double>> generarVector(double izqX, double derX,double izqY, double derY, double dif);
     void buscarVar(string);
+
+    int dimX;
+    int dimY;
     Arbol * arbol;
 };
 

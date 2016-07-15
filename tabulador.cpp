@@ -38,10 +38,16 @@ vector<vector<double>> Tabulador::generarVector(double izqX, double derX,double 
     if(this->tresd){
         cout << "****** Graficando en 3D  ******* " << endl;
         double temp  = izqY;
+
+
+        this->dimX = 0;
+
         for(izqX;izqX<=derX;izqX+=dif){
         //cout << this->arbol->solve(izq) << endl;
             //cout << "here"<<endl;
             izqY = temp;
+            this->dimX  ++;
+            this->dimY = 0;
             for(izqY;izqY<=derY;izqY+=dif){
                 //cout << dif <<"    x: "<<izqX << "<="<< derX  << "    y: "  << izqY<< "<="<< derY <<endl;
                 vector<double> temp;
@@ -50,12 +56,16 @@ vector<vector<double>> Tabulador::generarVector(double izqX, double derX,double 
                 temp.push_back(this->arbol->solve(izqX,izqY));
 
                 datos.push_back(temp);
+                this->dimY  ++;
             }
 
         }
     }
     else {
         cout << "****** Graficando en 2D  ******* " << endl;
+
+        this->dimY = 1;
+        this->dimX = 0;
          for(izqX;izqX<=derX;izqX+=dif){
         //cout << this->arbol->solve(izq) << endl;
 
@@ -65,6 +75,7 @@ vector<vector<double>> Tabulador::generarVector(double izqX, double derX,double 
             temp.push_back(0.0);
 
             datos.push_back(temp);
+            this->dimX ++;
         }
     }
 
