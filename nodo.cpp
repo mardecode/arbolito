@@ -8,9 +8,10 @@ Nodo::Nodo(double (*operacion ) (double , double))
     //this->hijo2 = n2;
 
 }
-Nodo::Nodo(bool var)
+Nodo::Nodo(bool var,bool var2)
 {
-    this->is_variable = var;
+    this->is_variableX = var;
+    this->is_variableY = var2;
     cout << "#Vr ";
 }
 
@@ -31,16 +32,19 @@ Nodo::Nodo(double val)
 }
 
 
-double Nodo::resolver(double x){
-    if (this->is_variable){
+double Nodo::resolver(double x,double y){
+    if (this->is_variableX){
         //cout << "variab"<<endl;
         return x;
+    }
+    if(this->is_variableY){
+        return y;
     }
     if (this->is_valor){
         //cout << "valor"<<endl;
         return this->valor;
     }
     //cout << "oper"<<endl;
-    //cout << operar(hijo1->resolver(x),hijo2->resolver(x))<< endl;
-    return operar(hijo1->resolver(x),hijo2->resolver(x));
+    // cout << hijo1->resolver(x,y) << "  " << hijo2->resolver(x,y) << endl;
+    return operar(hijo1->resolver(x,y),hijo2->resolver(x,y));
 }

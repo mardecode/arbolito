@@ -20,8 +20,8 @@ public:
     Nodo * next(Nodo*);
 
     void crearArbol();
-    double solve(double);
-   // double resolver(double);
+    double solve(double,double val2 = 0);
+
 
 };
 

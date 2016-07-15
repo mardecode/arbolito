@@ -12,13 +12,15 @@ public:
     Nodo();
     Nodo(double);
     Nodo(int);
-    Nodo(bool);
+    Nodo(bool,bool); //si es x o y
     Nodo( double (*operacion ) (double , double));
 
     Nodo * hijo1 = 0;
     Nodo * hijo2 = 0;
     //
-    bool  is_variable = false;
+    bool  is_variableX = false;
+    bool  is_variableY = false;
+
     bool  is_valor = false;
 
     double valor;
@@ -27,7 +29,7 @@ public:
     double (*operar ) (double , double);
 
     //
-    double resolver(double);
+    double resolver(double,double y = 0) ;
 
 
 };

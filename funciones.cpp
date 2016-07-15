@@ -9,9 +9,9 @@ double producto (double a,double b){
 }
 
 double division (double a,double b){
-     return a / b ;
+     return b / a ;
 }
 
 double potencia (double a,double b){
-     return pow(a, b) ;
+     return pow(b, a) ;
 }

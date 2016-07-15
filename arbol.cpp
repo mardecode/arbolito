@@ -26,12 +26,17 @@ Nodo * Arbol::next(Nodo * n){
         return n;
     }
     else{
-        if(ultimo() != "x"){
-            double val = stod(ultimo());
-            n = new Nodo(val);
+        if(ultimo() == "x"){
+
+            n = new Nodo(true,false);
+
+        }
+        else if (ultimo() == "y"){
+            n = new Nodo(false,true);
         }
         else{
-           n = new Nodo(true);
+           double val = stod(ultimo());
+            n = new Nodo(val);
         }
         borrar_ultimo();
         return n;
@@ -42,7 +47,7 @@ void Arbol::crearArbol(){
 
     this->raiz = Arbol::next(this->raiz);
 }
-double Arbol::solve(double val){
-    return this->raiz->resolver(val);
+double Arbol::solve(double val, double val2){
+    return this->raiz->resolver(val, val2);
 }
 

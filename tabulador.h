@@ -12,9 +12,14 @@ using namespace  std;
 
 class Tabulador
 {
+private:
+    bool dosd = false;
+    bool tresd = false;
+    string ecuacion;
 public:
     Tabulador(string);
-    vector<vector<double>> generarVector(double izq, double der,double dif);
+    vector<vector<double>> generarVector(double izqX, double derX,double izqY, double derY, double dif);
+    void buscarVar(string);
     Arbol * arbol;
 };
 

@@ -40,9 +40,10 @@ vector<string> Analizador::preorden(){
             }
             else{
                 auto s_pre = this->pila.back();
-                cout << "que fue"<<endl;
+
                 int pre = this->pesos[s_pre] ;
-                cout << "pes "<< s_pre <<pre << endl;
+
+                //cout << "pes "<< s_pre <<pre << endl;
                 int next = this->pesos[i];
 
 
