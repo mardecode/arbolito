@@ -72,6 +72,7 @@ vector<string> Analizador::postorden(){
            print_vector(pila,"pila: ");
            print_vector(resultado,"resp: ");
        }
+       cout << endl;
    }
 
    while(!pila.empty()){
@@ -82,5 +83,6 @@ vector<string> Analizador::postorden(){
    }
    print_vector(pila,"pila: ");
    print_vector(resultado,"resp: ");
+   cout << endl;
     return resultado;
 }

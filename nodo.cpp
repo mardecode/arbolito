@@ -1,13 +1,17 @@
 #include "Nodo.h"
 
-Nodo::Nodo(double (*operacion ) (double , double))
+Nodo::Nodo(double (*operacion ) (double , double), bool una)
 {
     this->operar = operacion;
-    cout << "#Op ";
+    this->is_unario = una;
+    if (una) cout << "#OpUna ";
+    else cout << "#OpBin ";
     //this->hijo1 = n1;
     //this->hijo2 = n2;
 
 }
+
+
 Nodo::Nodo(bool var,bool var2)
 {
     this->is_variableX = var;
@@ -44,7 +48,11 @@ double Nodo::resolver(double x,double y){
         //cout << "valor"<<endl;
         return this->valor;
     }
-    //cout << "oper"<<endl;
-    // cout << hijo1->resolver(x,y) << "  " << hijo2->resolver(x,y) << endl;
-    return operar(hijo1->resolver(x,y),hijo2->resolver(x,y));
+
+    if(this->is_unario){
+        return operar(hijo1->resolver(x,y),0);
+    }
+    else{
+        return operar(hijo1->resolver(x,y),hijo2->resolver(x,y));
+    }
 }
