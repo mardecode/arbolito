@@ -1,14 +1,31 @@
 #include "tabulador.h"
 #include <iostream>
 using namespace std;
+#include "analizador.h"
 #include "parser.h"
+
 int main(){
 
-      Parser * p = new Parser("x + y");
+      Parser * p = new Parser("( 5 + 3 ) * sin x");
+
       auto res = p->parsear();
-        for (auto i :res){
-            cout << i << endl;
-        }
+      for (auto i :res){
+          cout << i ;
+      }
+      cout<< "\n";
+
+    Analizador * a = new Analizador(res);
+    auto r = a->postorden();
+
+    for (auto i :r){
+        cout << i ;
+    }
+
+
+
+
+
+
 
      /*
      * generarVector( limiteIzquierdo, limiteDerecho , Diferencial )

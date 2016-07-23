@@ -2,6 +2,9 @@
 
 Analizador::Analizador(vector<string> e)
 {
+    reverse(e.begin(), e.end());
+    //cout << "reverse ";
+    //print_vector(e,"oie");
     this->expresion = e;
 }
 void Analizador::print_vector(vector<string> vec,string name){
@@ -13,76 +16,71 @@ void Analizador::print_vector(vector<string> vec,string name){
 
 }
 
-vector<string> Analizador::preorden(){
+vector<string> Analizador::postorden(){
 
-    vector<string> resultado;
-    for(auto i:this->expresion){
+   vector<string> resultado;
+   vector<string> pila;
 
-        if(i=="("){
-            this->pila.push_back(i);
-            //cout << "here1" ;
+   bool error = false;
 
-        }
-        else if(i==")"){
-            //this->pila.push_back(i);
-            resultado.push_back(this->pila.back());
-            this->pila.pop_back();
-            this->pila.pop_back();
-            //cout << "here2" ;
+   while(!expresion.empty() and !error ){
+       auto e = expresion.back();
+       //cout << e << ",";
+       if(e=="("){
+           cout << "parentesis (";
+           pila.push_back(e);
+           expresion.pop_back();
+           print_vector(pila,"pila: ");
+           print_vector(resultado,"resp: ");
+       }
+       else if(e==")"){
+           cout << "parentesis )"<<endl;
+           while(!pila.empty()){
 
-        }
-        else if(this->is_operador(i)){
-            cout << "operator " << i <<this->pila.size() << endl;
+               if (pila.back() == "("){
+                    pila.pop_back();
+                    error = false;
+               }
+               else{
+                   resultado.push_back(pila.back());
+                   pila.pop_back();
+                   error = true;
 
-            if(this->pila.size() == 0) {
-                cout << "vaci " << i <<endl;
-                this->pila.push_back(i);
-            }
-            else{
-                auto s_pre = this->pila.back();
+               }
+           }
+           expresion.pop_back();
+           print_vector(pila,"pila: ");
+           print_vector(resultado,"resp: ");
+       }
+       else if(is_operador(e)){
+           cout << "operador : " << e << endl;
+           while(!pila.empty() and (pesos[pila.back()]>=pesos[e])){
+               resultado.push_back(pila.back());
+               pila.pop_back();
 
-                int pre = this->pesos[s_pre] ;
+           }
+           pila.push_back(expresion.back());
+           expresion.pop_back();
+           print_vector(pila,"pila: ");
+           print_vector(resultado,"resp: ");
+       }
+       else{
+           //numero o var
+            cout << "num o var: " << e << endl;
+           resultado.push_back(e);
+           expresion.pop_back();
+           print_vector(pila,"pila: ");
+           print_vector(resultado,"resp: ");
+       }
+   }
 
-                //cout << "pes "<< s_pre <<pre << endl;
-                int next = this->pesos[i];
-
-
-                if (pre == next){
-                    auto temp = s_pre;
-                    s_pre = i;
-                    i = temp;
-                }
-                else if (next>pre){
-                    this->pila.push_back(i);
-                }
-                else{
-                    reverse(this->pila.begin(),this->pila.end());
-                    for(auto op:this->pila){
-                        resultado.push_back(op);
-                    }
-                    this->pila.clear();
-                    this->pila.push_back(i);
-                }
-
-            }
-            //cout << "here3" ;
-        }
-        else{
-            resultado.push_back(i);
-        }
-
-        if(i==this->expresion.back()){
-            reverse(this->pila.begin(),this->pila.end());
-            for(auto op:this->pila){
-                resultado.push_back(op);
-            }
-            this->pila.clear();
-        }
-        this->print_vector(this->pila,"Pila");
-        this->print_vector(resultado,"REs");
-        cout << endl;
-    }
-    //reverse(resultado.begin(),resultado.end());
+   while(!pila.empty()){
+       resultado.push_back(pila.back());
+       pila.pop_back();
+       print_vector(pila,"pila: ");
+       print_vector(resultado,"resp: ");
+   }
+   print_vector(pila,"pila: ");
+   print_vector(resultado,"resp: ");
     return resultado;
-
 }

@@ -12,9 +12,11 @@ Mapeador::Mapeador()
     pesos["+"] = 1;
     pesos["*"] = 2;
     pesos["/"] = 2;
-    pesos["^"] = 3;
 
-    pesos["sin"] = 2;
+    pesos["sin"] = 3;
+
+    pesos["^"] = 4;
+
 
 
 
