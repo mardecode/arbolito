@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+38a8fdf6934744551b0c5f9cdc7e960e CMakeFiles/SimpleView_automoc
+9d1bc0d36539ab5cdab163a0c26045f8 ui_graficadora.h

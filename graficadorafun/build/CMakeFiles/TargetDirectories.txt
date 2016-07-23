@@ -1,0 +1,2 @@
+/home/margar/OAD/graficadorafun/build/CMakeFiles/SimpleView.dir
+/home/margar/OAD/graficadorafun/build/CMakeFiles/SimpleView_automoc.dir
