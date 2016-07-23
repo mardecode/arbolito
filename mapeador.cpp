@@ -6,11 +6,16 @@ Mapeador::Mapeador()
     mapita["*"] = producto;
     mapita["/"] = division;
     mapita["^"] = potencia;
+    mapita["sin"] = seno;
 
     pesos["+"] = 1;
     pesos["*"] = 2;
     pesos["/"] = 2;
+    pesos["sin"] = 2;
     pesos["^"] = 3;
+
+
+
 
 }
 

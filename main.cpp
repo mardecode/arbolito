@@ -7,7 +7,7 @@ int main(){
      /*
      * generarVector( limiteIzquierdo, limiteDerecho , Diferencial )
      */
-    Tabulador * t = new Tabulador("x + y ^ 2");
+    Tabulador * t = new Tabulador("( x + y ) * 1 sin x");
     auto datos = t->generarVector(0,10,0,10,0.1);
 
 
