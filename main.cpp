@@ -18,8 +18,8 @@ int main(){
 */
 
 
-    Tabulador * t = new Tabulador("( x + 2 ) * sin ( x + 1 )");
-    auto datos = t->generarVector(0,10,0,10,0.1);
+    Tabulador * t = new Tabulador("cos ( ( x ) ) * sin ( y )");
+    auto datos = t->generarVector(0,10,0,10,1);
 
 
     cout << "main: " << "X  " << " "<< "Y  " << " " << "Z"<<endl;

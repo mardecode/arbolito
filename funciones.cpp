@@ -20,3 +20,7 @@ double potencia (double a,double b){
 double seno (double a,double){
     return sin(a);
 }
+
+double coseno (double a,double){
+    return cos(a);
+}

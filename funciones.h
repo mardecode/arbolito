@@ -7,5 +7,6 @@ double producto(double,double);
 double division(double,double);
 double potencia(double,double);
 double seno(double,double);
+double coseno(double,double);
 
 #endif // FUNCIONES_H

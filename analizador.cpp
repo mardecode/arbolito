@@ -34,18 +34,18 @@ vector<string> Analizador::postorden(){
            print_vector(resultado,"resp: ");
        }
        else if(e==")"){
+           error = true;
            cout << "parentesis )"<<endl;
            while(!pila.empty()){
 
                if (pila.back() == "("){
                     pila.pop_back();
                     error = false;
+                    break;
                }
                else{
                    resultado.push_back(pila.back());
-                   pila.pop_back();
-                   error = true;
-
+                   pila.pop_back();    
                }
            }
            expresion.pop_back();

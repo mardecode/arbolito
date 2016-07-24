@@ -8,15 +8,17 @@ Mapeador::Mapeador()
     mapita["^"] = potencia;
 
     unarios["sin"] = seno;
+    unarios["cos"] = coseno;
 
     pesos["+"] = 1;
+
     pesos["*"] = 2;
     pesos["/"] = 2;
 
     pesos["sin"] = 3;
+    pesos["cos"] = 3;
 
     pesos["^"] = 4;
-
 
 
 
