@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <sstream>
 
 using namespace  std;
 class Parser
@@ -12,6 +13,15 @@ public:
     Parser(string);
     string texto;
     vector<string> parsear();
+
+    char suma = '+';
+    char resta ='-';
+    char multi = '*';
+    char divi = '/';
+    char poten = '^';
+    char dere = ')';
+    char izq = '(';
+
 
 };
 

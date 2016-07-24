@@ -3,20 +3,28 @@
 Mapeador::Mapeador()
 {
     mapita["+"] = suma;
+    mapita["-"] = resta;
     mapita["*"] = producto;
     mapita["/"] = division;
     mapita["^"] = potencia;
 
+    unarios["sqrt"] = raizCuadrada;
     unarios["sin"] = seno;
+    unarios["cos"] = coseno;
+    unarios["tan"] = tangente;
 
     pesos["+"] = 1;
+    pesos["-"] = 1;
+
     pesos["*"] = 2;
     pesos["/"] = 2;
 
     pesos["sin"] = 3;
+    pesos["cos"] = 3;
+    pesos["tan"] = 3;
 
     pesos["^"] = 4;
-
+    pesos["sqrt"] = 4;
 
 
 

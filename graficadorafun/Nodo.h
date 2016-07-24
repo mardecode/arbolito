@@ -13,11 +13,16 @@ public:
     Nodo(double);
     Nodo(int);
     Nodo(bool,bool); //si es x o y
-    Nodo( double (*operacion ) (double , double));
+    Nodo(double (*operacion ) (double , double) , bool una = false);
+
 
     Nodo * hijo1 = 0;
     Nodo * hijo2 = 0;
     //
+
+    bool is_unario = false;
+
+
     bool  is_variableX = false;
     bool  is_variableY = false;
 
