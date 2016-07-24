@@ -20,21 +20,17 @@ double potencia (double a,double b){
      return pow(b, a) ;
 }
 
-double raizCuadrada(double a;double){
+double raizCuadrada(double a,double){
 	return sqrt(a);
 }
 double seno (double a,double){
     return sin(a);
 }
 
-<<<<<<< HEAD
 double coseno (double a,double){
     return cos(a);
-=======
-double coseno(double a,double){
-	return cos(a);
 }
+
 double tangente(double a,double){
 	return tan(a);
->>>>>>> master
 }

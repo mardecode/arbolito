@@ -11,10 +11,7 @@ double potencia(double,double);
 double raizCuadrada(double,double);
 double seno(double,double);
 double coseno(double,double);
-<<<<<<< HEAD
-=======
 double tangente(double,double);
 
->>>>>>> master
 
 #endif // FUNCIONES_H
