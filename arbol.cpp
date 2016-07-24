@@ -36,11 +36,17 @@ Nodo * Arbol::next(Nodo * n){
     else{
         if(ultimo() == "x"){
 
-            n = new Nodo(true,false);
+            n = new Nodo(true,false,false);
 
         }
+        else if (ultimo() == "-x"){
+            n = new Nodo(true,false,true);
+        }
         else if (ultimo() == "y"){
-            n = new Nodo(false,true);
+            n = new Nodo(false,true,false);
+        }
+        else if (ultimo() == "y"){
+            n = new Nodo(false,true,true);
         }
         else{
            double val = stod(ultimo());

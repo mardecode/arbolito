@@ -18,7 +18,7 @@ int main(){
 */
 
 
-    Tabulador * t = new Tabulador("cos(x)*sin(y)");
+    Tabulador * t = new Tabulador("- x");
     auto datos = t->generarVector(0,10,0,10,1);
 
 

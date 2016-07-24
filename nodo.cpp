@@ -12,10 +12,12 @@ Nodo::Nodo(double (*operacion ) (double , double), bool una)
 }
 
 
-Nodo::Nodo(bool var,bool var2)
+Nodo::Nodo(bool var, bool var2, bool negativo)
 {
+
     this->is_variableX = var;
     this->is_variableY = var2;
+    this->is_negativo = negativo;
     cout << "#Vr ";
 }
 
@@ -39,10 +41,14 @@ Nodo::Nodo(double val)
 double Nodo::resolver(double x,double y){
     if (this->is_variableX){
         //cout << "variab"<<endl;
-        return x;
+        if (this->is_negativo) return -x;
+
+        else    return x;
+
     }
     if(this->is_variableY){
-        return y;
+        if (this->is_negativo) return -y;
+        else return y;
     }
     if (this->is_valor){
         //cout << "valor"<<endl;

@@ -12,7 +12,7 @@ public:
     Nodo();
     Nodo(double);
     Nodo(int);
-    Nodo(bool,bool); //si es x o y
+    Nodo(bool,bool,bool); //si es x o y , negativo ?
     Nodo(double (*operacion ) (double , double) , bool una = false);
 
 
@@ -22,6 +22,7 @@ public:
 
     bool is_unario = false;
 
+    bool is_negativo = false;
 
     bool  is_variableX = false;
     bool  is_variableY = false;
