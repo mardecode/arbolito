@@ -9,7 +9,7 @@ Tabulador::Tabulador(string ecuacion)
     Analizador * a = new Analizador(expresion);
     cout << expresion.size() << endl;
     a->print_vector(expresion,"Inicio");
-    auto preorden = a->preorden();
+    auto preorden = a->postorden();
 
     this->arbol = new Arbol(preorden) ;
     this->arbol->crearArbol();

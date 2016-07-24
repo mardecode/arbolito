@@ -55,6 +55,8 @@ QtCore/qmetatype.h
 /home/margar/OAD/graficadorafun/funciones.cpp
 funciones.h
 /home/margar/OAD/graficadorafun/funciones.h
+math.h
+/home/margar/OAD/graficadorafun/math.h
 
 /home/margar/OAD/graficadorafun/funciones.h
 math.h
@@ -162,6 +164,8 @@ string
 vector
 -
 iostream
+-
+sstream
 -
 
 /home/margar/OAD/graficadorafun/tabulador.cpp

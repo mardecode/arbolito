@@ -14,14 +14,22 @@ string Arbol::ultimo(){
 
 Nodo * Arbol::next(Nodo * n){
     if(this->is_operador(ultimo())){
-        n = new Nodo(this->mapita[ultimo()]);
-        borrar_ultimo();
+        if (is_binario(ultimo())){
+            n = new Nodo(this->mapita[ultimo()]);
+            borrar_ultimo();
 
-        Nodo * hijo1;
-        n->hijo1 = next(hijo1);
+            Nodo * hijo1;
+            n->hijo1 = next(hijo1);
 
-        Nodo * hijo2;
-        n->hijo2 = next(hijo2);
+            Nodo * hijo2;
+            n->hijo2 = next(hijo2);
+        }else{
+            n = new Nodo(this->unarios[ultimo()],true);
+            borrar_ultimo();
+
+            Nodo * hijo1;
+            n->hijo1 = next(hijo1);
+        }
 
         return n;
     }
@@ -46,6 +54,8 @@ Nodo * Arbol::next(Nodo * n){
 void Arbol::crearArbol(){
 
     this->raiz = Arbol::next(this->raiz);
+
+
 }
 double Arbol::solve(double val, double val2){
     return this->raiz->resolver(val, val2);

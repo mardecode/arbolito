@@ -1,8 +1,12 @@
 #include "funciones.h"
+#include "math.h"
 double suma (double a,double b){
      return a + b ;
 }
 
+double resta (double a,double b){
+	return b - a;
+}
 
 double producto (double a,double b){
      return a * b ;
@@ -16,21 +20,16 @@ double potencia (double a,double b){
      return pow(b, a) ;
 }
 
-double resta (double a,double b){
-    return b - a;
+double raizCuadrada(double a;double){
+	return sqrt(a);
 }
-double raizcuadrada(double a, double b ){
-    return sqrt(a) * b;
+double seno (double a,double){
+    return sin(a);
 }
-double seno(double a,double b){
-    return sin(a) * b;
+
+double coseno(double a,double){
+	return cos(a);
 }
-double coseno(doublea,double b){
-    return cos(a) * b;
-}
-double tangente(double a,double b){
-    return tan(a) * b;
-}
-double logaritmo(double a, double b){
-    return log(a) * b;
+double tangente(double a,double){
+	return tan(a);
 }
